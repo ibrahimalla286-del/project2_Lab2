@@ -2,13 +2,13 @@
    1. CSS Variables & Resets (Light Mode - Default)
    ========================================================= */
 :root {
-  --primary: #2563eb;
-  --primary-dark: #1d4ed8;
+  --primary: #1d4ed8;       /* Blue with higher contrast for accessibility */
+  --primary-dark: #1e40af;
   --bg: #f8fafc;
   --surface: #ffffff;
-  --text: #1e293b;
-  --muted: #64748b;
-  --border: #e2e8f0;
+  --text: #0f172a;          /* Darker text for maximum readability */
+  --muted: #475569;         /* High-contrast muted text */
+  --border: #cbd5e1;
   --radius: 8px;
   --space: 24px;
 }
@@ -21,10 +21,10 @@
     --bg: #0f172a;
     --surface: #1e293b;
     --text: #f8fafc;
-    --muted: #94a3b8;
-    --border: #334155;
-    --primary: #3b82f6;
-    --primary-dark: #2563eb;
+    --muted: #cbd5e1;
+    --border: #475569;
+    --primary: #60a5fa;
+    --primary-dark: #3b82f6;
   }
 }
 
@@ -37,7 +37,7 @@ body {
   font-family: system-ui, -apple-system, sans-serif;
   background: var(--bg);
   color: var(--text);
-  line-height: 1.5;
+  line-height: 1.6;
   transition: background-color 0.3s, color 0.3s;
 }
 
@@ -82,7 +82,8 @@ a { color: var(--primary); }
 .site-header a:not(.logo) { 
   text-decoration: none; 
   color: var(--muted);
-  padding: 4px 0; 
+  padding: 6px 0; 
+  font-weight: 500;
 }
 
 .site-header a:not(.logo):hover,
@@ -103,7 +104,7 @@ a { color: var(--primary); }
   padding: 10px 20px;
   font: inherit;
   font-weight: 600;
-  color: #fff;
+  color: #ffffff;
   background: var(--primary);
   border: 2px solid var(--primary);
   border-radius: var(--radius);
@@ -116,22 +117,34 @@ a { color: var(--primary); }
 .btn.is-hover {
   background: var(--primary-dark);
   border-color: var(--primary-dark);
+  color: #ffffff;
 }
 
-.btn:focus-visible { outline: 3px solid #93b4f8; outline-offset: 2px; }
+.btn:focus-visible { 
+  outline: 3px solid var(--primary); 
+  outline-offset: 2px; 
+}
 
 .btn:disabled {
   background: #cbd5e1;
   border-color: #cbd5e1;
-  color: #64748b;
+  color: #475569;
   cursor: not-allowed;
 }
 
-.btn-outline { background: transparent; color: var(--primary); }
-.btn-outline:hover:not(:disabled) { background: var(--primary); color: #fff; }
+.btn-outline { 
+  background: transparent; 
+  color: var(--primary); 
+  border-color: var(--primary);
+}
+
+.btn-outline:hover:not(:disabled) { 
+  background: var(--primary); 
+  color: #ffffff; 
+}
 
 /* =========================================================
-   5. Card & Grid Layout (Desktop & Tablet Breakpoints)
+   5. Card & Grid Layout
    ========================================================= */
 .card {
   background: var(--surface);
@@ -143,9 +156,9 @@ a { color: var(--primary); }
 
 .card h3 { font-size: 1.25rem; margin-top: 0; }
 .card p { color: var(--muted); }
-.card .btn { margin-top: 4px; }
+.card .btn { margin-top: 8px; }
 
-/* Mobile (Default): 1 Column */
+/* Mobile First Grid */
 .grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -153,18 +166,12 @@ a { color: var(--primary); }
   padding-bottom: 48px;
 }
 
-/* Tablet Screens (>= 600px): 2 Columns */
 @media (min-width: 600px) {
-  .grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+  .grid { grid-template-columns: repeat(2, 1fr); }
 }
 
-/* Desktop Screens (>= 900px): 3 Columns */
 @media (min-width: 900px) {
-  .grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
+  .grid { grid-template-columns: repeat(3, 1fr); }
 }
 
 .grid .wide { grid-column: 1 / -1; }
@@ -188,27 +195,24 @@ a { color: var(--primary); }
 
 table { width: 100%; min-width: 520px; border-collapse: collapse; }
 th, td { padding: 12px 16px; text-align: left; }
-th { background: var(--primary); color: #fff; white-space: nowrap; }
+th { background: var(--primary); color: #ffffff; white-space: nowrap; }
 tbody tr:nth-child(even) { background: var(--bg); }
 tbody tr:hover { background: rgba(37, 99, 235, 0.1); }
 
 .badge { 
-  padding: 2px 10px; 
+  padding: 4px 10px; 
   border-radius: 999px; 
   font-size: .85rem; 
-  font-weight: 600; 
+  font-weight: 700; 
   background: #dcfce7; 
-  color: #166534; 
+  color: #14532d; 
 }
-.badge.off { background: #fee2e2; color: #991b1b; }
+.badge.off { background: #fee2e2; color: #7f1d1d; }
 
 /* =========================================================
-   7. Additional Components (Forms, Alerts, CSS Modal)
+   7. Form Elements, Alerts, CSS Modal
    ========================================================= */
-/* Form Elements */
-.form-group {
-  margin-bottom: 16px;
-}
+.form-group { margin-bottom: 16px; }
 .form-group label {
   display: block;
   margin-bottom: 6px;
@@ -225,7 +229,6 @@ tbody tr:hover { background: rgba(37, 99, 235, 0.1); }
   font: inherit;
 }
 
-/* Alert Box Component */
 .alert {
   padding: 14px 20px;
   border-radius: var(--radius);
@@ -234,24 +237,20 @@ tbody tr:hover { background: rgba(37, 99, 235, 0.1); }
   font-weight: 500;
 }
 .alert-info {
-  background: #e0f2fe;
-  color: #0369a1;
-  border-color: #bae6fd;
+  background: #0284c7;
+  color: #ffffff;
 }
 
-/* CSS Pure Modal (No JS - using :target) */
 .modal {
   display: none;
   position: fixed;
   top: 0; left: 0; width: 100%; height: 100%;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.7);
   align-items: center;
   justify-content: center;
   z-index: 1000;
 }
-.modal:target {
-  display: flex;
-}
+.modal:target { display: flex; }
 .modal-content {
   background: var(--surface);
   padding: 24px;
@@ -261,7 +260,6 @@ tbody tr:hover { background: rgba(37, 99, 235, 0.1); }
   position: relative;
 }
 
-/* Helpers */
 .section { padding: 32px 0 8px; }
 .section > h2 { margin-bottom: 16px; }
 .row { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; }
