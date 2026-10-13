@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home page / My website</title>
+    <!-- ربط ملف الـ CSS المشترك -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- الهيدر وقائمة التنقل المشتركة -->
+    <header class="site-header">
+        <a class="logo" href="index.html">ٍStudio</div>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="active">Home page</a></li>
+                <li><a href="components.html">Components</a></li>
+                <li><a href="#about">about</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="container">
+            <section class="hero">
+                <h1>Build clean layouts with Flexbox and Grid</h1>
+                <p>This homepage uses Flexbox for the navigation and CSS Grid for the 
+                   main content. Resize the window to see it switch to a single column.</p>
+                <div class="action" >
+                    <div class="btn" href="component.html">View component</div>
+                    <div class="btn btn_outline" href="about.html">Learn more</div>
+                </div>
+            </section>
+
+    <!-- المحتوى الرئيسي -->
+    <main class="Grid">
+        <article class="card">
+            <h2>Flexible navigation</h2>
+            <p>The header is a flex container. The logo and links are pushed apart 
+               with justify-content</p>
+        </article>
+
+        <article class="card">
+            <h3>Grid content</h3>
+            <p>Cards sit in three equal columns. The gap property handles all the 
+               spacing.</p>
+        </article>
+
+        <article class="card">
+            <h4>One breakpoint</h4>
+            <p>Below 700px the grid becomes one column, so every card stacks on 
+               phones.</p>
+        </article>
+
+        <section class="card wide" id="about">
+            <h5>About this page</h5>
+            <p>This wide card spans every column. All colors, the radius and thespacing 
+                come from CSS variables defined once on :root.</p>
+        </section>
+
+        <section class="card wide" id="contact">
+            <h6>Contact</h6>
+            <p>Questions about the lab? Send us a message.</p>
+            <a class="btn" href="mailto:i57373785@gmail.com">Email the TA</a>
+        </section>
+
+        
+    </main>
+
+    <!-- الفوتر -->
+    <footer class="site-footer">
+        <p>&copy; All rights reserved 2026.</p>
+    </footer>
+
+</body>
+</html>

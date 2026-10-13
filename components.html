@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Studio - Component library</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Header Section -->
+  <header class="site-header">
+    <a class="logo" href="index.html">Studio</a>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a class="active" href="components.html">Components</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main Content Container -->
+  <main class="container">
+    
+    <!-- Title Section -->
+    <section class="section">
+      <h1>Component library</h1>
+      <p class="label">Every style on this page comes from the CSS variables in style.css.</p>
+    </section>
+
+    <!-- Design Tokens Section -->
+    <section class="section">
+      <h2>Design tokens</h2>
+      <div class="swatches">
+        <div class="swatch">
+          <i style="background: var(--primary)"></i>
+          <code>--primary #2563eb</code>
+        </div>
+        <div class="swatch">
+          <i style="background: var(--bg)"></i>
+          <code>--bg #f8fafc</code>
+        </div>
+        <div class="swatch">
+          <i style="background: var(--text)"></i>
+          <code>--text #1e293b</code>
+        </div>
+      </div>
+    </section>
+
+    <!-- Buttons in Three States Section -->
+    <section class="section">
+      <h2>Buttons</h2>
+      <div class="row">
+        <div>
+          <button class="btn">Default</button>
+          <div class="label">default</div>
+        </div>
+        <div>
+          <button class="btn is-hover">Hover</button>
+          <div class="label">hover</div>
+        </div>
+        <div>
+          <button class="btn" disabled>Disabled</button>
+          <div class="label">disabled</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Card Component Section -->
+    <section class="section">
+      <h2>Card</h2>
+      <article class="card" style="max-width: 360px">
+        <h3>Card title</h3>
+        <p>A short description that explains what this card is about.</p>
+        <a class="btn" href="#">Read more</a>
+      </article>
+    </section>
+
+    <!-- Responsive Table Section -->
+    <section class="section">
+      <h2>Responsive table</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Role</th>
+              <th>Email</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Ada Lovelace</td>
+              <td>Engineer</td>
+              <td>ada@example.com</td>
+              <td><span class="badge">Active</span></td>
+            </tr>
+            <tr>
+              <td>Linus Torvalds</td>
+              <td>Maintainer</td>
+              <td>linus@example.com</td>
+              <td><span class="badge">Active</span></td>
+            </tr>
+            <tr>
+              <td>Grace Hopper</td>
+              <td>Admiral</td>
+              <td>grace@example.com</td>
+              <td><span class="badge off">Away</span></td>
+            </tr>
+            <tr>
+              <td>Alan Turing</td>
+              <td>Researcher</td>
+              <td>alan@example.com</td>
+              <td><span class="badge">Active</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+    <!-- 1. Form Elements Section -->
+    <section class="section">
+      <h2>Form Elements</h2>
+      <form style="max-width: 400px;">
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input type="text" id="username" class="form-control" placeholder="Enter username">
+        </div>
+        <div class="form-group">
+          <label for="role">Role</label>
+          <select id="role" class="form-control">
+            <option value="developer">Developer</option>
+            <option value="designer">Designer</option>
+          </select>
+        </div>
+        <button type="submit" class="btn">Submit</button>
+      </form>
+    </section>
+
+    <!-- 2. Alert / Notification Section -->
+    <section class="section">
+      <h2>Alert Notification</h2>
+      <div class="alert alert-info" role="alert">
+        This is an informational message box for user feedback!
+      </div>
+    </section>
+
+    <!-- 3. Pure CSS Modal Section (No JavaScript) -->
+    <section class="section">
+      <h2>CSS Modal</h2>
+      <a href="#demo-modal" class="btn">Open Modal</a>
+
+      <!-- Modal Container -->
+      <div id="demo-modal" class="modal">
+        <div class="modal-content">
+          <h3>Modal Title</h3>
+          <p>This modal window is opened and closed using CSS only (no JavaScript) via the :target selector.</p>
+          <a href="#" class="btn btn-outline">Close Modal</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer Section -->
+  <footer class="site-footer" style="margin-top: 48px">
+    <div class="container">Component library</div>
+  </footer>
+
+</body>
+</html>
